@@ -1,0 +1,12 @@
+variant: fcos
+version: 1.5.0
+ignition:
+  config:
+    merge:
+      - local: common.bu
+storage:
+  files:
+    - path: /etc/rancher/rke2/config.yaml
+      overwrite: true
+      contents:
+        local: rke2/config-bootstrap.yaml

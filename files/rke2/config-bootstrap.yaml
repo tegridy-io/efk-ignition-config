@@ -1,0 +1,16 @@
+node-name: rke2-master-01
+protect-kernel-defaults: true
+profile: cis
+selinux: true
+write-kubeconfig-mode: 600
+cni: none
+disable-cloud-controller: true
+disable-kube-proxy: true
+disable:
+  - rke2-coredns
+  - rke2-ingress-nginx
+  - rke2-metrics-server
+  - rke2-snapshot-controller-crd
+  - rke2-snapshot-controller
+  - rke2-snapshot-validation-webhook
+etcd-s3-access-key: ${AWS_ACCESS_KEY_ID}

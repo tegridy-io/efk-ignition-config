@@ -1,0 +1,21 @@
+variant: fcos
+version: 1.5.0
+passwd:
+  users:
+    - name: core
+      ssh_authorized_keys:
+        - ''
+storage:
+  files:
+    - path: /etc/selinux/config
+      overwrite: true
+      contents:
+        local: conf/selinux-config
+    - path: /etc/sysctl.d/60-rke2-cis.conf
+      overwrite: true
+      contents:
+        local: conf/sysctl-rke2-cis.conf
+    - path: /etc/zincati/config.d/55-updates-strategy.toml
+      overwrite: true
+      contents:
+        local: conf/zincati-update-strategy.toml
